@@ -7,31 +7,23 @@ public class ApprMatchingString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
-		 * Scanner prefixStr=new Scanner(System.in);
-		 * System.out.println("Enter prefix String "); String
-		 * prefixText=prefixStr.nextLine(); Scanner suffixStr=new
-		 * Scanner(System.in); System.out.println("Enter suffix String ");
-		 * String suffText=suffixStr.nextLine(); Scanner textScore=new
-		 * Scanner(System.in); System.out.println("Enter textScore String ");
-		 * String textMain=textScore.nextLine();
-		 */
-		String prefixText = "";
-		String suffText = "";
-		String textMain = "";
 
+		Scanner prefixStr = new Scanner(System.in);
+		System.out.println("Enter prefix String ");
+		String prefixText = prefixStr.nextLine();
+		Scanner suffixStr = new Scanner(System.in);
+		System.out.println("Enter suffix String ");
+		String suffText = suffixStr.nextLine();
+		Scanner textScore = new Scanner(System.in);
+		System.out.println("Enter textScore String ");
+		String textMain = textScore.nextLine();
 		FindCompareString(prefixText, suffText, textMain);
-
 	}
 
 	private static void FindCompareString(String prefixText, String suffText,
 			String textMain) {
 		// TODO Auto-generated method stub
-
-		prefixText = "raven";
-		suffText = "ginkgo";
-		textMain = "engine";
-		int preCount = 0, SufCount = 0, sum;
+		int preCount = 0, SufCount = 0;
 		char[] prefixArray = prefixText.toCharArray();
 		char[] suffixArray = suffText.toCharArray();
 		char[] masterArray = textMain.toCharArray();
@@ -46,7 +38,6 @@ public class ApprMatchingString {
 				}
 			}
 		}
-		System.out.println(preCount);
 		for (int i = 0; i < suffixArray.length; i++) {
 			for (int j = 0; j < masterArray.length - 1; j++) {
 				if (suffixArray[i] == masterArray[j]
@@ -56,10 +47,7 @@ public class ApprMatchingString {
 				}
 			}
 		}
-		System.out.println(SufCount);
-		
-		System.out.println(masterArray.toString().substring(1,
-				preCount + SufCount));
+		System.out.println(textMain.substring(0, preCount + SufCount));
 	}
 
 }
