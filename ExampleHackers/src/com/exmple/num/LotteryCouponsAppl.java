@@ -17,10 +17,7 @@ public class LotteryCouponsAppl {
 		for (int lotorryNum = 1; lotorryNum <= noOfLotteries; lotorryNum++) {
 			int lottorySum = getLotterySum(lotorryNum);
 			if (allSumMap.containsKey(lottorySum)) {
-				allSumMap
-						.put(lottorySum,
-								(new Integer(allSumMap.get(lottorySum))
-										.intValue() + 1));
+				allSumMap.put(lottorySum,(new Integer(allSumMap.get(lottorySum)).intValue() + 1));
 			} else {
 				allSumMap.put(lottorySum, new Integer(1));
 			}
@@ -42,7 +39,9 @@ public class LotteryCouponsAppl {
 		int sum = 0;
 		while (lotteryNum != 0) {
 			sum = sum + lotteryNum % 10;
+			System.out.println("check"+sum);
 			lotteryNum = lotteryNum / 10;
+			System.out.println(lotteryNum);
 		}
 		return sum;
 	}
