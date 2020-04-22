@@ -17,19 +17,24 @@ public class LotteryCouponsAppl {
 		for (int lotorryNum = 1; lotorryNum <= noOfLotteries; lotorryNum++) {
 			int lottorySum = getLotterySum(lotorryNum);
 			if (allSumMap.containsKey(lottorySum)) {
-				allSumMap.put(lottorySum,
-						(new Integer(lottorySum).intValue() + 1));
+				allSumMap
+						.put(lottorySum,
+								(new Integer(allSumMap.get(lottorySum))
+										.intValue() + 1));
 			} else {
 				allSumMap.put(lottorySum, new Integer(1));
 			}
 		}
-		// System.out.println(allSumMap);
+		System.out.println(allSumMap);
+		int result = 0;
 		int maxValueInMap = (Collections.max(allSumMap.values()));
 		for (Entry<Integer, Integer> entry : allSumMap.entrySet()) {
 			if (entry.getValue() == maxValueInMap) {
+				result++;
 				System.out.println(entry.getKey());
 			}
 		}
+		System.out.println("Final Result \t" + result);
 	}
 
 	private static int getLotterySum(int lotteryNum) {
